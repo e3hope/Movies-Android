@@ -87,6 +87,7 @@ public class ResearchActivity extends Activity {
                         genre = String.valueOf(genrepos);
                     }
                     Log.e("클릭확인", genre);
+                    init();
                     progressBar.setVisibility(View.VISIBLE);
                     progressview.setVisibility(View.VISIBLE);
                     Response.Listener<String> responseListener = new Response.Listener<String>() {

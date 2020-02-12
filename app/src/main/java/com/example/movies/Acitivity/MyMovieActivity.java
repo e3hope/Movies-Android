@@ -48,6 +48,7 @@ public class MyMovieActivity extends Activity {
     private TextView customid;
     private TextView customtitle;
     private ImageView customimage;
+    private TextView customclose;
     private String moviemax;
     private float ratingmax=0;
     private Dialog customdialog;
@@ -124,6 +125,13 @@ public class MyMovieActivity extends Activity {
                                 customid = customdialog.findViewById(R.id.customid);
                                 customtitle = customdialog.findViewById(R.id.customtitle);
                                 customimage = customdialog.findViewById(R.id.customimage);
+                                customclose = customdialog.findViewById(R.id.customclose);
+                                customclose.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        customdialog.dismiss();
+                                    }
+                                });
                                 recommenddialog();
                                 customdialog.show();
                             }
@@ -172,7 +180,7 @@ private void recommenddialog() {
                     Bitmap bm = BitmapFactory.decodeStream(bufferedInputStream);
                     Log.e("url/",url+"");
                     customimage.setImageBitmap(bm);
-                    customid.setText(""+recommendlist.get(0) + "님의 추천입니다.");
+                    customid.setText("추천인: "+recommendlist.get(0)  );
                     customtitle.setText(recommendlist.get(1));
                 } catch (IOException e) {
                     e.printStackTrace();
