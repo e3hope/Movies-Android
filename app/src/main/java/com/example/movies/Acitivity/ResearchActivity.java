@@ -87,7 +87,10 @@ public class ResearchActivity extends Activity {
                         genre = String.valueOf(genrepos);
                     }
                     Log.e("클릭확인", genre);
-                    init();
+                    clearData();
+                    listgenre.clear();
+                    listTitle.clear();
+                    listImage.clear();
                     progressBar.setVisibility(View.VISIBLE);
                     progressview.setVisibility(View.VISIBLE);
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -96,10 +99,6 @@ public class ResearchActivity extends Activity {
                             try {
                                 progressBar.setVisibility(View.GONE);
                                 progressview.setVisibility(View.GONE);
-                                clearData();
-                                listgenre.clear();
-                                listTitle.clear();
-                                listImage.clear();
                                 JSONArray jsonResponse = new JSONArray(response);
                                 for (int i = 0; i < jsonResponse.length(); i++) {
                                     if (i % 2 == 0) {
@@ -123,7 +122,7 @@ public class ResearchActivity extends Activity {
                     ResearchRequest researchRequest = new ResearchRequest(genre, responseListener);
                     RequestQueue queue = Volley.newRequestQueue(ResearchActivity.this);
                     researchRequest.setRetryPolicy(new com.android.volley.DefaultRetryPolicy(  //서버통신시간 조정
-                            300000,
+                            500000,
                             DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                             DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
                     queue.add(researchRequest);

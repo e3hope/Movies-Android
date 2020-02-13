@@ -60,14 +60,16 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal">
             <EditText
                 android:id="@+id/UPWedit"
-                android:layout_width="250dp"
+                android:layout_width="260dp"
                 android:layout_height="40dp"
                 android:background="#ffffff"
                 android:password="true"
-                android:layout_marginLeft="20dp"
+
                 android:hint="비밀번호를 입력하세요" />
             <Button
                 android:layout_width="60dp"
@@ -79,22 +81,22 @@
 
         <EditText
             android:id="@+id/NewPWedit"
-            android:layout_width="250dp"
+            android:layout_width="260dp"
             android:layout_height="40dp"
             android:background="#ffffff"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="40dp"
             android:visibility="invisible"
             android:layout_marginTop="20dp"
             android:password="true"
             android:hint="새로운 비밀번호를 입력하세요" />
         <EditText
             android:id="@+id/NewPW2edit"
-            android:layout_width="250dp"
+            android:layout_width="260dp"
             android:layout_height="40dp"
             android:background="#ffffff"
             android:visibility="invisible"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="40dp"
             android:password="true"
             android:hint="다시한번 비밀번호를 입력하세요" />
         <Button
@@ -105,7 +107,6 @@
             android:layout_gravity="center"
             android:textSize="20dp"
             android:id="@+id/UpdateButton"
-            android:visibility="invisible"
-            android:textColor="@color/colorGray" />
+            android:visibility="invisible" />
     </LinearLayout>
 </LinearLayout>
